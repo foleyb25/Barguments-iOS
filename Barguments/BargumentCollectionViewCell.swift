@@ -27,23 +27,25 @@ class BargumentCollectionViewCell: UICollectionViewCell {
             let label = UILabel()
             label.font = UIFont.boldSystemFont(ofSize: 16)
             label.textAlignment = .center
+            label.textColor = .black
             label.numberOfLines = 0
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
     
     private let leftButton: UIButton = {
-           let button = UIButton()
-           button.setTitle("<", for: .normal)
-           button.setTitleColor(.black, for: .normal) // Change this to your desired color
-           button.translatesAutoresizingMaskIntoConstraints = false
-           return button
-       }()
+        let button = UIButton()
+        button.setTitle("<", for: .normal)
+        button.setTitleColor(.label, for: .normal) // use dynamic system color
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
 
        private let rightButton: UIButton = {
            let button = UIButton()
            button.setTitle(">", for: .normal)
-           button.setTitleColor(.black, for: .normal) // Change this to your desired color
+           button.setTitleColor(.label, for: .normal) // use dynamic system color
            button.translatesAutoresizingMaskIntoConstraints = false
            return button
        }()

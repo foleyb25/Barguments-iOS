@@ -21,30 +21,30 @@ class BargumentSelectionViewController: UIViewController {
     
     private lazy var nextButton: UIButton = {
         let btn = UIButton(type: .system)
-         btn.setTitle("Next >", for: .normal)
-         btn.layer.cornerRadius = 10
-         btn.layer.borderWidth = 1 // This will set the border width to 1
-         btn.tintColor = .black
-         btn.layer.borderColor = UIColor.black.cgColor
+        btn.setTitle("Next >", for: .normal)
+        btn.layer.cornerRadius = 10
+        btn.layer.borderWidth = 1 // This will set the border width to 1
+        btn.tintColor = .label  // use dynamic system color
+        btn.layer.borderColor = UIColor.label.cgColor  // use dynamic system color
         btn.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10) // Change these values to your needs
-         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.translatesAutoresizingMaskIntoConstraints = false
         btn.isHidden = true
-         return btn
+        return btn
     }()
     
     private lazy var randomizeButton: UIButton = {
         let btn = UIButton(type: .system)
-         btn.setTitle("Randomize", for: .normal)
-         btn.layer.cornerRadius = 10
-         btn.layer.borderWidth = 1 // This will set the border width to 1
-         btn.tintColor = .black
-         btn.layer.borderColor = UIColor.black.cgColor
+        btn.setTitle("Randomize", for: .normal)
+        btn.layer.cornerRadius = 10
+        btn.layer.borderWidth = 1 // This will set the border width to 1
+        btn.tintColor = .label  // use dynamic system color
+        btn.layer.borderColor = UIColor.label.cgColor  // use dynamic system color
         btn.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10) // Change these values to your needs
-         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.translatesAutoresizingMaskIntoConstraints = false
         btn.isHidden = true
-         return btn
+        return btn
     }()
-    
+
     private lazy var collectionView: UICollectionView = {
         let layout = BargumentCollectionViewLayout()
 
@@ -67,8 +67,7 @@ class BargumentSelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        
+        view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
         view.addSubview(titleLabel)
         view.addSubview(nextButton)

@@ -131,7 +131,7 @@ class GameViewController: UIViewController {
         let configuration = UIImage.SymbolConfiguration(pointSize: 30)
         let image = UIImage(systemName: "play", withConfiguration: configuration)
         btn.setImage(image, for: .normal)
-         btn.tintColor = .black
+         btn.tintColor = .label
          return btn
     }()
     
@@ -140,7 +140,7 @@ class GameViewController: UIViewController {
         let configuration = UIImage.SymbolConfiguration(pointSize: 30)
         let image = UIImage(systemName: "flag", withConfiguration: configuration)
         btn.setImage(image, for: .normal)
-        btn.tintColor = .black
+        btn.tintColor = .label
         return btn
     }()
     
@@ -149,7 +149,7 @@ class GameViewController: UIViewController {
         let configuration = UIImage.SymbolConfiguration(pointSize: 30)
         let image = UIImage(systemName: "minus.magnifyingglass", withConfiguration: configuration)
         btn.setImage(image, for: .normal)
-        btn.tintColor = .black
+        btn.tintColor = .label
         return btn
     }()
     
@@ -158,7 +158,7 @@ class GameViewController: UIViewController {
         let configuration = UIImage.SymbolConfiguration(pointSize: 30)
         let image = UIImage(systemName: "plus.magnifyingglass", withConfiguration: configuration)
         btn.setImage(image, for: .normal)
-        btn.tintColor = .black
+        btn.tintColor = .label
         return btn
     }()
     
@@ -173,7 +173,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         view.addSubview(topGameStatusBarView)
         topGameStatusBarView.addSubview(player1Status)

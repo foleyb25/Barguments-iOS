@@ -68,7 +68,7 @@ class RoundViewController: UIViewController {
         let configuration = UIImage.SymbolConfiguration(pointSize: 20)
         let image = UIImage(systemName: "flag", withConfiguration: configuration)
         btn.setImage(image, for: .normal)
-        btn.tintColor = .black
+        btn.tintColor = .label
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -147,7 +147,7 @@ class RoundViewController: UIViewController {
         //Upper Left Image
         let iv = UIImageView()
         iv.image = UIImage(systemName: "plus.circle")
-        iv.tintColor = .black
+        iv.tintColor = .label
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -157,7 +157,7 @@ class RoundViewController: UIViewController {
         // Upper Right Image
         let iv = UIImageView()
         iv.image = UIImage(systemName: "plus.circle")
-        iv.tintColor = .black
+        iv.tintColor = .label
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -167,7 +167,7 @@ class RoundViewController: UIViewController {
         //Lower Left Image
         let iv = UIImageView()
         iv.image = UIImage(systemName: "minus.circle")
-        iv.tintColor = .black
+        iv.tintColor = .label
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -177,7 +177,7 @@ class RoundViewController: UIViewController {
         //Lower Right Image
         let iv = UIImageView()
         iv.image = UIImage(systemName: "minus.circle")
-        iv.tintColor = .black
+        iv.tintColor = .label
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -221,7 +221,7 @@ class RoundViewController: UIViewController {
         titleLabel.text = gameRound.title
         playerUpLabel.text = "\(gameRound.playerUp)'s Turn"
         
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         // Adding views to the main view
         view.addSubview(titleLabel)

@@ -35,29 +35,36 @@ class TitleScreenViewController: UIViewController {
     
     private var player1TextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Player1"
         textField.borderStyle = .roundedRect
+        textField.backgroundColor = .systemBackground // use dynamic system color
+        textField.textColor = .label // use dynamic system color
+        textField.attributedPlaceholder = NSAttributedString(string: "Player 1 name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.secondaryLabel])
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
+
     
     private var player2TextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Player2"
         textField.borderStyle = .roundedRect
+        textField.backgroundColor = .systemBackground // use dynamic system color
+        textField.textColor = .label // use dynamic system color
+        textField.attributedPlaceholder = NSAttributedString(string: "Player 2 name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.secondaryLabel])
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
     private var judgeTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Judge"
         textField.borderStyle = .roundedRect
+        textField.backgroundColor = .systemBackground // use dynamic system color
+        textField.textColor = .label // use dynamic system color
+        textField.attributedPlaceholder = NSAttributedString(string: "Judge name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.secondaryLabel])
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    var startButton: UIButton = {
+    private lazy var startButton: UIButton = {
        let btn = UIButton(type: .system)
         btn.setTitle("Start", for: .normal)
         btn.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
@@ -71,7 +78,7 @@ class TitleScreenViewController: UIViewController {
         return btn
     }()
     
-    var rulesButton: UIButton = {
+    private lazy var rulesButton: UIButton = {
        let btn = UIButton(type: .system)
         btn.setTitle("How To Play", for: .normal)
         btn.addTarget(self, action: #selector(presentRules), for: .touchUpInside)
@@ -162,44 +169,45 @@ class TitleScreenViewController: UIViewController {
 
     // Button action
     @objc func startButtonTapped() {
-        guard let player1 = player1TextField.text, !player1.isEmpty, player1.count >= 3, player1.count <= 12 else {
+        guard let player1 = player1TextField.text?.trimmingCharacters(in: .whitespaces), !player1.isEmpty, player1.count >= 3, player1.count <= 12 else {
             showAlert(title: "Invalid Input", message: "Player 1 name should be between 3 and 12 characters and cannot be empty")
-                return
-            }
+            return
+        }
             
-            guard let player2 = player2TextField.text, !player2.isEmpty, player2.count >= 3, player2.count <= 12 else {
-                print("Player 2 name should be between 3 and 12 characters")
-                showAlert(title: "Invalid Input", message: "Player 2 name should be between 3 and 15 characters and cannot be empty")
-                return
-            }
+        guard let player2 = player2TextField.text?.trimmingCharacters(in: .whitespaces), !player2.isEmpty, player2.count >= 3, player2.count <= 12 else {
+            print("Player 2 name should be between 3 and 12 characters")
+            showAlert(title: "Invalid Input", message: "Player 2 name should be between 3 and 15 characters and cannot be empty")
+            return
+        }
             
-            guard player1 != player2 else {
-                print("Player 1 and Player 2 names cannot be the same")
-                showAlert(title: "Invalid Input", message: "Player 1 and Player 2 names cannot be the same")
-                return
-            }
+        guard player1 != player2 else {
+            print("Player 1 and Player 2 names cannot be the same")
+            showAlert(title: "Invalid Input", message: "Player 1 and Player 2 names cannot be the same")
+            return
+        }
 
-            guard let judge = judgeTextField.text, !judge.isEmpty, judge.count >= 3, judge.count <= 12 else {
-                print("Judge name should be between 3 and 12 characters")
-                showAlert(title: "Invalid Input", message: "Judge name should be between 3 and 15 characters and cannot be empty")
-                return
-            }
+        guard let judge = judgeTextField.text?.trimmingCharacters(in: .whitespaces), !judge.isEmpty, judge.count >= 3, judge.count <= 12 else {
+            print("Judge name should be between 3 and 12 characters")
+            showAlert(title: "Invalid Input", message: "Judge name should be between 3 and 15 characters and cannot be empty")
+            return
+        }
             
-            guard player1 != judge, player2 != judge else {
-                print("Judge cannot be one of the players")
-                showAlert(title: "Invalid Input", message: "Judge cannot be one of the players names")
-                return
-            }
+        guard player1 != judge, player2 != judge else {
+            print("Judge cannot be one of the players")
+            showAlert(title: "Invalid Input", message: "Judge cannot be one of the players names")
+            return
+        }
         // Handle start button tap here
         let vc = BargumentSelectionViewController()
-        vc.player1 = player1TextField.text
-        vc.player2 = player2TextField.text
-        vc.judge = judgeTextField.text
+        vc.player1 = player1TextField.text?.trimmingCharacters(in: .whitespaces)
+        vc.player2 = player2TextField.text?.trimmingCharacters(in: .whitespaces)
+        vc.judge = judgeTextField.text?.trimmingCharacters(in: .whitespaces)
         player1TextField.text = ""
         player2TextField.text = ""
         judgeTextField.text = ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
+
     
     @objc func presentRules() {
         let rulesVC = RulesViewController()

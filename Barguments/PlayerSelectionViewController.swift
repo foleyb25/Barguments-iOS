@@ -38,23 +38,24 @@ class PlayerSelectionViewController: UIViewController {
     let arrowImageView: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(systemName: "arrow.down")
-        img.tintColor = .black
+        img.tintColor = .label 
         img.translatesAutoresizingMaskIntoConstraints = false
         img.contentMode = .scaleAspectFit
         return img
     }()
+
     
     private lazy var nextButton: UIButton = {
         let btn = UIButton(type: .system)
-         btn.setTitle("Next >", for: .normal)
-         btn.layer.cornerRadius = 10
-         btn.layer.borderWidth = 1 // This will set the border width to 1
-         btn.tintColor = .black
-         btn.layer.borderColor = UIColor.black.cgColor
+        btn.setTitle("Next >", for: .normal)
+        btn.layer.cornerRadius = 10
+        btn.layer.borderWidth = 1 // This will set the border width to 1
+        btn.tintColor = .label  // use dynamic system color
+        btn.layer.borderColor = UIColor.label.cgColor  // use dynamic system color
         btn.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10) // Change these values to your needs
-         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.translatesAutoresizingMaskIntoConstraints = false
         btn.isHidden = true
-         return btn
+        return btn
     }()
     
     public lazy var bargumentLabel: UILabel = {
@@ -69,7 +70,7 @@ class PlayerSelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.addSubview(titleLabel)
         view.addSubview(player1Label)
         view.addSubview(player2Label)

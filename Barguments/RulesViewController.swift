@@ -61,7 +61,7 @@ class RulesViewController: UIViewController {
         super.viewDidLoad()
 
         // 2. Set up the view
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.addSubview(rulesTextView)
         view.addSubview(closeButton)
                
