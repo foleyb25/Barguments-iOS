@@ -88,7 +88,7 @@ class GameViewController: UIViewController {
 
                 We have reached the final moment. \(goesSecond), it's your turn now.
 
-                This is your last chance to sway the opinion of the judge, \(judge), and win this game. You have 30 seconds to conclude your bargument, challenge (goesFirst)'s points and reinforce your stance. Don't hold back, every point matters.
+                This is your last chance to sway the opinion of the judge, \(judge), and win this game. You have 30 seconds to conclude your bargument, challenge \(goesFirst)'s points and reinforce your stance. Don't hold back, every point matters.
 
                 When you're ready, \(judge) will hit the play button. This is the moment to bring everything together and deliver a compelling closing bargument.
                 """, playerUp: goesSecond),
