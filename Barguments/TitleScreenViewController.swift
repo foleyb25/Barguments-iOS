@@ -10,7 +10,7 @@ class TitleScreenViewController: UIViewController {
     // UI Elements
     var titleLabel: UILabel = {
         let label = UILabel()
-        let customFont = UIFont(name: "CarnivaleeFreakshow", size: 36)
+        let customFont = UIFont(name: "CarnivaleeFreakshow", size: 64)
         label.font = customFont
         label.text = "Barguments"
         label.textColor = .white

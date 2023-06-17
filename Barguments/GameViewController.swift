@@ -23,10 +23,14 @@ class GameViewController: UIViewController {
         return [
             GameRound(title: "Round 1 - Opening Barguments", duration: 60, rules: """
             Top of Round 1 - Opening Barguments.
+            
+            "\(currentTopic)"
+            
+            Pass the Device to the judge, \(judge). They will be the score keeper, and ultimately determine a winner.
 
             \(goesFirst) will start this round.
 
-            \(goesFirst) should now choose the bargument they wish to bargue for or against, and announce their choice to everyone. It's important to remember that once chosen, this position must be maintained for the entirety of the game.
+            \(goesFirst) will now choose the bargument they wish to bargue for or against, and announce their choice to everyone. It's important to remember that once chosen, this position must be maintained for the entirety of the game.
 
             \(goesFirst) will have 1 minute to present the best bargument possible. The judge, \(judge), is the scorekeeper and has the authority to adjust the score based on the quality of the bargument.
 
@@ -37,6 +41,8 @@ class GameViewController: UIViewController {
             
             GameRound(title: "Round 1 - Opening Barguments", duration: 60, rules: """
             Bottom of Round 1 - Opening Barguments.
+            
+            "\(currentTopic)"
 
             \(goesSecond) will now give their opposing bargument.
 
@@ -49,6 +55,8 @@ class GameViewController: UIViewController {
 
             GameRound(title: "Round 2 - Rebuttal", duration: 90, rules: """
                 Top of Round 2 - Rebuttals.
+                
+                "\(currentTopic)"
 
                 Now that we've heard the opening barguments, it's time for rebuttals.
 
@@ -61,6 +69,8 @@ class GameViewController: UIViewController {
 
             GameRound(title: "Round 2 - Rebuttal", duration: 90, rules: """
                 Bottom of Round 2 - Rebuttals.
+                
+                "\(currentTopic)"
 
                 We've heard the first round of rebuttals and now, the stage is set for \(goesSecond) to counter-bargue.
 
@@ -72,6 +82,8 @@ class GameViewController: UIViewController {
                 """, playerUp: goesSecond),
             GameRound(title: "Round 3 - Closing Barguments", duration: 30, rules: """
                 Top of Round 3 - Closing Barguments.
+                
+                "\(currentTopic)"
 
                 We have reached the final stretch. \(goesFirst), it's your turn again.
 
@@ -85,6 +97,8 @@ class GameViewController: UIViewController {
                 """, playerUp: goesFirst),
             GameRound(title: "Round 3 - Closing Barguments", duration: 30, rules: """
                 Bottom of Round 3 - Closing Barguments.
+                
+                "\(currentTopic)"
 
                 We have reached the final moment. \(goesSecond), it's your turn now.
 
